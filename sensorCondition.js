@@ -24,7 +24,7 @@ const roomRefs = [
 ].map(room => ref(database, `Current_Data/${room}`));
 
 // Get the canvas element
-const canvas = document.getElementById('fireAlarmCanvas');
+const canvas = document.getElementById('sensorCanvas');
 const ctx = canvas.getContext('2d');
 
 // Define room size and spacing
@@ -84,7 +84,7 @@ function drawAllRooms(roomDataArray) {
             const roomData = roomDataArray[roomIndex];
             const row = levelIndex; // Calculate row index
             const col = i; // Calculate column index
-            const x = col * (roomSize + spacing); // Calculate x position
+            const x = 10 + col * (roomSize + spacing); // Calculate x position
             const y = row * (roomSize + spacing * 2 + levelSpacing) + 50; // Calculate y position with extra spacing for info
             const roomNumber = `L${levelIndex + 1}0${i + 1}`; // Format room number as L01-01, L02-04
             drawRoom(x, y, roomData, roomNumber); // Pass formatted room number to drawRoom
@@ -104,6 +104,6 @@ roomRefs.forEach((ref, index) => {
 
 // Set canvas size based on the number of rooms and spacing
 const canvasWidth = 4 * (roomSize + spacing);
-const canvasHeight = 2 * (roomSize + spacing * 2 + levelSpacing) + 100; // Add extra height for info and levels
+const canvasHeight = 2 * (roomSize + spacing * 2 + levelSpacing) + 0; // Add extra height for info and levels
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;

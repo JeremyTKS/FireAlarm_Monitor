@@ -72,20 +72,11 @@ body {
     margin-bottom: 20px;
 }
 
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #72A0C1;
-}
-
-th {
-    background-color: #72A0C1;
+.status-icon {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-left: 10px;
 }
 
 /* Logout Button */
@@ -102,13 +93,41 @@ th {
 }
 
 .logout-button:hover {
-    background-color: #72A0C1;
+    background-color: #FA8072;
     color: #fff;
 }
 
 /* Homepage */
 #homePage {
     text-align: center; /* Center align the content */
+}
+
+#fireCondition {
+    position: relative;
+}
+
+.dashboard-section h2 {
+    position: relative;
+}
+
+.status-icon {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#emergencyIcon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 150px; 
+    animation: blink 1s infinite;
 }
 
 /* Heading and Logo Container */
@@ -132,62 +151,6 @@ th {
     margin-bottom: 20px; /* Add spacing below the centered image */
 }
 
-/* Table Controls */
-.table-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
-
-/* Export Button and Dropdown Styling */
-.export-table {
-    position: relative;
-    display: inline-block;
-}
-
-.export-button {
-    background-color: #72A0C1;
-    color: #FFF;
-    border: none;
-    padding: 10px 20px; /* Match the original size of the previous and next buttons */
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.export-button:hover {
-    background-color: #800020;
-}
-
-/* Show the dropdown menu on hover */
-.export-table:hover {
-    display: block;
-}
-
-/* Align Export Button to the Right */
-.table-controls .export-table {
-    margin-left: auto;
-}
-
-/* Ensure Previous and Next Buttons Keep Their Original Size */
-#prevPage, #nextPage , #userPrevPage, #userNextPage{
-    padding: 10px 20px; /* Ensure this matches the original size */
-    background-color: #72A0C1;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-#prevPage:hover, #nextPage:hover , #userPrevPage:hover, #userNextPage:hover{
-    background-color: #800020;
-}
-
-#prevPage:disabled, #nextPage:disabled , #userPrevPage:disabled, #userNextPage:disabled{
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
 /* Chart Container */
 .chart-container {
     margin: 20px auto; /* Center the chart container horizontally */
@@ -199,7 +162,7 @@ th {
     margin-bottom: 20px;
     padding: 20px;
     background-color: #fff;
-    border: 1px solid #72A0C1;
+    border: 1px solid #FA8072;
     border-radius: 5px;
 }
 
@@ -232,7 +195,7 @@ th {
 
 /* Buttons */
 .settings-category button {
-    background-color: #72A0C1;
+    background-color: #FA8072;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -248,7 +211,7 @@ th {
 
 /* Edit and Cancel Buttons */
 .edit-button, .cancel-button {
-    background-color: #72A0C1;
+    background-color: #FA8072;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -302,22 +265,6 @@ th {
     top: 50%;
     left: 225px;
     transform: translateY(-93%);
-}
-
-/* Reset Button */
-.reset-button {
-    background-color: #F44336;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-.reset-button:hover {
-    background-color: #d32f2f;
 }
 
 /* Responsive Design */
@@ -399,6 +346,10 @@ th {
         font-size: 14px;
         padding: 8px 14px;
     }
+    #emergencyIcon {
+        width: 100px; /* Decrease width for smaller screens */
+        height: 100px; /* Decrease height for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -425,12 +376,6 @@ th {
     }
     .main-content h2 {
         font-size: 18px;
-    }
-    table {
-        font-size: 14px;
-    }
-    th, td {
-        padding: 6px;
     }
     .logout-button {
         font-size: 14px;
@@ -467,12 +412,6 @@ th {
         font-size: 13px;
         padding: 6px 12px;
     }
-    .input-container {
-        display: flex;
-        align-items: center;
-        position: relative;
-        margin-bottom: 30px;
-    }
     .password-input {
         position: absolute;
         transform: translateY(70%);
@@ -483,5 +422,10 @@ th {
         top: 40%;
         left: 200px;
         transform: translateY(-93%);
+    }
+    #emergencyIcon {
+        width: 80px; /* Further decrease width for smallest screens */
+        height: 80px; /* Further decrease height for smallest screens */
+        right: 10px; /* Adjust positioning for smaller screens */
     }
 }

@@ -10,8 +10,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: auto; /* Adjusted margin to move content to the right */
-    margin-right: 10%; /* Adjust the value based on your preference */
+    margin-left: auto;
+    margin-right: 10%;
 }
 
 header {
@@ -46,7 +46,7 @@ body {
 .box {
     padding: 20px 30px;
     max-width: 350px;
-    width: 90%;
+    width: 100%;
     backdrop-filter: blur(50px);
     border-radius: 5px;
     background: rgba(49, 49, 49, .2);
@@ -55,7 +55,6 @@ body {
     margin-left: auto; /* Adjusted margin to move content to the right */
     margin-right: 20%; /* Adjust the value based on your preference */
 }
-
 
 .box .form {
     padding: 10px 20px;
@@ -76,7 +75,7 @@ body {
 
 .box .form form .inputbox {
     margin-bottom: 30px;
-    font-size: 20px; 
+    font-size: 20px;
     position: relative;
 }
 
@@ -87,7 +86,7 @@ body {
     background: none;
     border-bottom: 1px solid #000000;
     color: #000000;
-    width: 80%;
+    width: 100%;
     font-size: 20px;
 }
 
@@ -148,6 +147,9 @@ body {
     .box .form form .sub {
         font-size: 28px;
     }
+    .box {
+        margin-right: 15%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -159,6 +161,7 @@ body {
     }
     .box {
         padding: 15px 25px;
+        margin-right: 10%;
     }
     .box .form h2 {
         font-size: 30px;
@@ -191,6 +194,7 @@ body {
     .box {
         padding: 10px 20px;
         max-width: 300px;
+        margin-right: 5%;
     }
     .box .form h2 {
         font-size: 25px;

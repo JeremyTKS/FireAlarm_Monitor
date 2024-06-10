@@ -16,7 +16,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: 200px;
-    background-color: #800020;
+    background-color: #191970;
     padding: 20px;
     position: relative;
     display: flex;
@@ -28,7 +28,7 @@ body {
 
 /* Sidebar Title */
 .dashboard-title {
-    color: #fff;
+    color: #E0115F;
     font-size: 30px;
     margin-top: 0px;
     margin-bottom: 50px;
@@ -53,14 +53,14 @@ body {
 }
 
 .sidebar ul li a:hover {
-    color: #000;
+    color: #E0115F;
 }
 
 /* Main Content */
 .main-content {
     flex: 1;
     padding: 20px;
-    background-color: rgba(248, 131, 121, 0.3); /* Adjust the alpha value (0.0 - 1.0) to change transparency */
+    background-color: rgb(173, 216, 230, 0.3); /* Adjust the alpha value (0.0 - 1.0) to change transparency */
     overflow-x: auto; /* Add scroll if content overflows */
     overflow-y: auto;
 }
@@ -82,7 +82,7 @@ body {
 /* Logout Button */
 .logout-button {
     background-color: #F0F8FF;
-    color: #800020;
+    color: #191970;
     border: none;
     padding: 10px 20px;
     text-align: center;
@@ -93,8 +93,8 @@ body {
 }
 
 .logout-button:hover {
-    background-color: #FA8072;
-    color: #fff;
+    background-color: #E30B5C;
+    color: #F0F8FF;
 }
 
 /* Homepage */
@@ -161,14 +161,14 @@ body {
 .settings-category {
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #FA8072;
+    background-color: rgba(250, 160, 160, 0.3);
+    border: 1px solid #E30B5C;
     border-radius: 5px;
 }
 
 .settings-category h3 {
     font-size: 24px;
-    color: #800020;
+    color: #191970;
     margin-top: 0;
     margin-bottom: 15px;
 }
@@ -182,7 +182,7 @@ body {
 .settings-category label {
     margin-top: 10px;
     font-size: 16px;
-    color: #800020;
+    color: #191970;
 }
 
 .settings-category input {
@@ -195,7 +195,7 @@ body {
 
 /* Buttons */
 .settings-category button {
-    background-color: #FA8072;
+    background-color: #191970;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -206,12 +206,12 @@ body {
 }
 
 .settings-category button:hover {
-    background-color: #800020;
+    background-color: #E30B5C;
 }
 
 /* Edit and Cancel Buttons */
 .edit-button, .cancel-button {
-    background-color: #FA8072;
+    background-color: #E30B5C;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -222,7 +222,7 @@ body {
 }
 
 .edit-button:hover, .cancel-button:hover {
-    background-color: #800020;
+    background-color: #191970;
 }
 
 .cancel-button {

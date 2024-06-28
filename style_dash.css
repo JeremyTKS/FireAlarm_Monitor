@@ -1,0 +1,468 @@
+/* Reset CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow-x: auto; /* Ensure content does not overflow the viewport */
+    overflow-y: auto;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #191970;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: auto;
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+}
+
+/* Sidebar Title */
+.dashboard-title {
+    color: #E0115F;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style-type: none;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #F0F8FF;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    color: #E0115F;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(173, 216, 230, 0.3); /* Adjust the alpha value (0.0 - 1.0) to change transparency */
+    overflow-x: auto; /* Add scroll if content overflows */
+    overflow-y: auto;
+}
+
+/* Main Content Title */
+.main-content h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.status-icon {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Logout Button */
+.logout-button {
+    background-color: #F0F8FF;
+    color: #191970;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    margin-top: auto;
+}
+
+.logout-button:hover {
+    background-color: #E30B5C;
+    color: #F0F8FF;
+}
+
+/* Homepage */
+#homePage {
+    text-align: center; /* Center align the content */
+}
+
+#fireCondition {
+    position: relative;
+}
+
+.dashboard-section h2 {
+    position: relative;
+}
+
+.status-icon {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#emergencyIcon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 150px; 
+    animation: blink 1s infinite;
+}
+
+/* Heading and Logo Container */
+.heading-logo-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center align horizontally */
+    margin-bottom: 30px; /* Add spacing below the container */
+}
+
+.heading-logo-container h2 {
+    margin-right: 20px; /* Add spacing between heading and logo */
+}
+
+.logo-image {
+    width: 150px; /* Adjust the width of the logo image */
+}
+
+.center-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    margin-bottom: 20px; /* Add spacing below the centered image */
+}
+
+/* Chart Container */
+.chart-container {
+    margin: 20px auto; /* Center the chart container horizontally */
+    max-width: 600px; /* Set a maximum width for the chart container */
+}
+
+/* Settings Section Styling */
+.settings-category {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(250, 160, 160, 0.3);
+    border: 1px solid #E30B5C;
+    border-radius: 5px;
+}
+
+.settings-category h3 {
+    font-size: 24px;
+    color: #191970;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+.settings-category form {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-category label {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #191970;
+}
+
+.settings-category input {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.settings-category button {
+    background-color: #191970;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.settings-category button:hover {
+    background-color: #E30B5C;
+}
+
+/* Edit and Cancel Buttons */
+.edit-button, .cancel-button {
+    background-color: #E30B5C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.edit-button:hover, .cancel-button:hover {
+    background-color: #191970;
+}
+
+.cancel-button {
+    background-color: #F44336;
+}
+
+.cancel-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Align Labels and Inputs */
+#adminProfileForm label,
+#changePasswordForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#adminProfileForm input,
+#changePasswordForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.password-input {
+    position: absolute;
+    left: 180px;
+}
+
+.visibility-button {
+    position: absolute;
+    top: 50%;
+    left: 225px;
+    transform: translateY(-93%);
+}
+
+.control-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.control-button.active#onButton {
+    background-color: green;
+}
+
+.control-button.inactive#onButton {
+    background-color: gray;
+}
+
+.control-button.active#offButton {
+    background-color: red;
+}
+
+.control-button.inactive#offButton {
+    background-color: gray;
+}
+
+.chart-container {
+    width: 800px; /* Set the width of the chart container */
+    height: 400px; /* Set the height of the chart container */
+    margin: 20px auto; /* Center the chart horizontally with a margin */
+    margin-top: 200px;
+    display: flex;
+    justify-content: center; /* Center contents horizontally */
+    align-items: center; /* Center contents vertically */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-title {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+    .sidebar ul {
+        font-size: 18px;
+    }
+    .sidebar ul li {
+        margin-bottom: 15px;
+    }
+    .main-content h2 {
+        font-size: 25px;
+    }
+    .settings-category h3 {
+        font-size: 22px;
+    }
+    .settings-category label {
+        font-size: 15px;
+    }
+    .settings-category input {
+        font-size: 15px;
+    }
+    .settings-category button {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 150px;
+        padding: 15px;
+    }
+    .dashboard-title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    .sidebar ul {
+        font-size: 16px;
+    }
+    .sidebar ul li {
+        margin-bottom: 10px;
+    }
+    .main-content h2 {
+        font-size: 20px;
+    }
+    .logout-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    .heading-logo-container h2 {
+        font-size: 20px; /* Decrease font size for smaller screens */
+    }
+
+    .logo-image {
+        width: 100px; /* Decrease logo size for smaller screens */
+    }
+
+    .center-image {
+        margin-bottom: 10px; /* Decrease spacing below the centered image */
+    }
+    .chart-container {
+        max-width: 400px; /* Adjust maximum width for smaller screens */
+    }
+    .settings-category h3 {
+        font-size: 20px;
+    }
+    .settings-category label {
+        font-size: 14px;
+    }
+    .settings-category input {
+        font-size: 14px;
+    }
+    .settings-category button {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+    #emergencyIcon {
+        width: 100px; /* Decrease width for smaller screens */
+        height: 100px; /* Decrease height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 95%;
+        height: auto;
+        padding: 10px;
+    }
+    .dashboard-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .sidebar ul {
+        font-size: 14px;
+    }
+    .sidebar ul li {
+        margin-bottom: 8px;
+    }
+    .main-content {
+        padding: 15px;
+    }
+    .main-content h2 {
+        font-size: 18px;
+    }
+    .logout-button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    .heading-logo-container h2 {
+        font-size: 18px; /* Further decrease font size for smallest screens */
+    }
+
+    .logo-image {
+        width: 80px; /* Further decrease logo size for smallest screens */
+    }
+
+    .center-image {
+        margin-bottom: 5px; /* Further decrease spacing below the centered image */
+    }
+    .chart-container {
+        max-width: 300px; /* Further adjust maximum width for smallest screens */
+    }
+    .settings-category {
+        padding: 15px;
+    }
+    .settings-category h3 {
+        font-size: 18px;
+    }
+    .settings-category label {
+        font-size: 13px;
+    }
+    .settings-category input {
+        font-size: 13px;
+        padding: 8px;
+    }
+    .settings-category button {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    .password-input {
+        position: absolute;
+        transform: translateY(70%);
+        left: 0;
+    }
+    .visibility-button {
+        position: absolute;
+        top: 40%;
+        left: 200px;
+        transform: translateY(-93%);
+    }
+    #emergencyIcon {
+        width: 80px; /* Further decrease width for smallest screens */
+        height: 80px; /* Further decrease height for smallest screens */
+        right: 10px; /* Adjust positioning for smaller screens */
+    }
+}

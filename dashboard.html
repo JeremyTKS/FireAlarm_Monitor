@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style_dash.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h1 class="dashboard-title">Fire Alarm System</h1>
+            <ul>
+                <li><a href="#" class="sidebar-link" data-section="homePage">Home</a></li>
+                <li><a href="#" class="sidebar-link" data-section="fireCondition">Fire Alarm Condition</a></li>
+                <li><a href="#" class="sidebar-link" data-section="sensorCondition">Sensor Condition</a></li>
+                <li><a href="#" class="sidebar-link" data-section="analysis">Analysis</a></li>
+                <li><a href="#" class="sidebar-link" data-section="setting">Settings</a></li>
+            </ul>
+            <button id="logoutButton" class="logout-button">Logout</button>
+        </aside>
+        <main class="main-content">
+
+            <section id="homePage" class="dashboard-section">
+                <div class="heading-logo-container">
+                    <div class="heading-content">
+                        <h2>Welcome to the Fire Alarm Monitoring System</h2>
+                        <p>This is your dashboard where you can monitor and manage your fire alarm system.</p>
+                    </div>
+                    <img src="img/logo.png" alt="Smart Locker Logo" class="logo-image">
+                </div>
+                <div class="image-container">
+                    <img src="img/fire_alarm.png" alt="Center Image" class="center-image">
+                </div>
+            </section>
+
+            <section id="fireCondition" class="dashboard-section">
+                <h2>
+                    Fire Alarm Condition 
+                    <img id="statusIcon" class="status-icon" src="icon.png" alt="Status Icon">
+                    <button id="onButton" class="control-button inactive">On</button>
+                    <button id="offButton" class="control-button active">Off</button>
+                    <img id="emergencyIcon" alt="Emergency Icon">
+                </h2>
+                <div class="firealarm-container">
+                    <canvas id="firealarmCanvas"></canvas>
+                    <div id="emergencyCondition">
+                        <!-- Your emergency condition content goes here -->
+                    </div>
+                </div>
+            </section>                                                       
+
+            <section id="sensorCondition" class="dashboard-section" style="display: none;">
+                <h2>Sensor Condition</h2>
+                <div class="sensor-container">
+                    <canvas id="sensorCanvas"></canvas>
+                </div>
+            </section>
+            
+            <section id="analysis" class="dashboard-section" style="display: none;">
+                <h2>Analysis</h2>
+                <div>
+                    <label for="dataType">Select Data Type:</label>
+                    <select id="dataType">
+                        <option value="smoke">Smoke Sensor</option>
+                        <option value="heat">Heat Sensor</option>
+                        <option value="fire">Fire Alarm</option>
+                    </select>
+                </div>
+                <div class="chart-container">
+                    <canvas id="selectedChart" width="1400" height="700"></canvas>
+                </div>
+            </section>                                                             
+
+            <section id="setting" class="dashboard-section" style="display: none;">
+                <h2>Settings</h2>
+            
+                <div class="settings-category">
+                    <h3>Admin Profile</h3>
+                    <div id="adminProfileView">
+                        <p><strong>Username:</strong> <span id="viewAdminUsername"></span></p>
+                        <p><strong>Email:</strong> <span id="viewAdminEmail"></span></p>
+                        <p><strong>Telephone Number:</strong> <span id="viewAdminPhone"></span></p>
+                        <button id="editProfileButton" class="edit-button">Edit</button>
+                    </div>
+                    <form id="adminProfileForm" style="display: none;">
+                        <label for="adminUsername">Username:</label>
+                        <input type="text" id="adminUsername" name="adminUsername">
+                        <label for="adminEmail">Email:</label>
+                        <input type="email" id="adminEmail" name="adminEmail">
+                        <label for="adminPhone">Telephone Number:</label>
+                        <input type="tel" id="adminPhone" name="adminPhone">
+                        <button type="submit">Save Changes</button>
+                        <button type="button" id="cancelEditProfileButton" class="cancel-button">Cancel</button>
+                    </form>
+                </div>
+            
+                <div class="settings-category">
+                    <h3>Security</h3>
+                    <div id="changePasswordView">
+                        <button id="changePasswordButton" class="edit-button">Change Password</button>
+                    </div>
+                    <form id="changePasswordForm" style="display: none;">
+                        <div class="input-container">
+                            <label for="currentPassword">Current Password:</label>
+                            <div class="password-input">
+                                <input type="password" id="currentPassword" name="currentPassword">
+                                <button type="button" id="toggleCurrentPasswordVisibility" class="visibility-button">Show</button>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label for="newPassword">New Password:</label>
+                            <div class="password-input">
+                                <input type="password" id="newPassword" name="newPassword">
+                                <button type="button" id="toggleNewPasswordVisibility" class="visibility-button">Show</button>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label for="confirmPassword">Confirm New Password:</label>
+                            <div class="password-input">
+                                <input type="password" id="confirmPassword" name="confirmPassword">
+                                <button type="button" id="toggleConfirmPasswordVisibility" class="visibility-button">Show</button>
+                            </div>
+                        </div>
+                        <button type="submit">Change Password</button>
+                        <button type="button" id="cancelChangePasswordButton" class="cancel-button">Cancel</button>
+                    </form>
+                </div>                                             
+            </section>   
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="fireCondition.js"></script>
+    <script type="module" src="sensorCondition.js"></script>
+    <script type="module" src="analysis.js"></script>
+    <script type="module" src="setting.js"></script>
+    
+</body>
+</html>

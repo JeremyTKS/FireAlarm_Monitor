@@ -145,9 +145,19 @@ const statusRef = ref(database, 'System/Status');
 const statusIcon = document.getElementById('statusIcon');
 onValue(statusRef, (snapshot) => {
     const status = snapshot.val();
+    const onButton = document.getElementById('onButton');
+    const offButton = document.getElementById('offButton');
     if (status === 'Off') {
         statusIcon.src = 'img/Sys_Off.png';
+        offButton.classList.add('active');
+        offButton.classList.remove('inactive');
+        onButton.classList.add('inactive');
+        onButton.classList.remove('active');
     } else if (status === 'On') {
+        onButton.classList.add('active');
+        onButton.classList.remove('inactive');
+        offButton.classList.add('inactive');
+        offButton.classList.remove('active');
         statusIcon.src = 'img/Sys_On.png';
     }
 });
@@ -169,3 +179,34 @@ onValue(emergencyRef, (snapshot) => {
         emergencyIcon.style.display = 'none'; // Hide the emergency icon
     }
 });
+
+document.getElementById('onButton').addEventListener('click', () => {
+    const onButton = document.getElementById('onButton');
+    const offButton = document.getElementById('offButton');
+    
+    onButton.classList.add('active');
+    onButton.classList.remove('inactive');
+    offButton.classList.add('inactive');
+    offButton.classList.remove('active');
+
+    statusIcon.src = 'img/Sys_On.png';
+
+    console.log('Fire Alarm Turned On');
+    // Add your on button functionality here
+});
+
+document.getElementById('offButton').addEventListener('click', () => {
+    const onButton = document.getElementById('onButton');
+    const offButton = document.getElementById('offButton');
+    
+    offButton.classList.add('active');
+    offButton.classList.remove('inactive');
+    onButton.classList.add('inactive');
+    onButton.classList.remove('active');
+    
+    statusIcon.src = 'img/Sys_Off.png';
+
+    console.log('Fire Alarm Turned Off');
+    // Add your off button functionality here
+});
+

@@ -267,6 +267,32 @@ body {
     transform: translateY(-93%);
 }
 
+.control-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.control-button.active#onButton {
+    background-color: green;
+}
+
+.control-button.inactive#onButton {
+    background-color: gray;
+}
+
+.control-button.active#offButton {
+    background-color: red;
+}
+
+.control-button.inactive#offButton {
+    background-color: gray;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .dashboard-title {
